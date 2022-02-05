@@ -1,0 +1,140 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Fludex Hub", "Synapse")
+
+local Tab = Window:NewTab("Player")
+local section1 = Tab:NewSection("LocalPlayer")
+local section1f = Tab:NewSection("Teams")
+
+section1:NewSlider("WalkSpeed", "Changes WalkSpeed", 500, 16, function(s) 
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+section1:NewSlider("JumpPower", "Changes JumpPower", 500, 50, function(s) 
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+
+local Tab = Window:NewTab("Main")
+local section2 = Tab:NewSection("Giver")
+
+section2:NewButton("Remington 870", "Get Remington 870", function()
+    
+local args = {
+    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+
+end)
+
+
+section2:NewButton("M9", "Get M9", function()
+
+
+local args = {
+    [1] = workspace.Prison_ITEMS.giver.M9.ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+
+end)
+
+
+section2:NewButton("Ak-47", "Get Ak-47", function()
+
+local args = {
+    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+
+end)
+
+
+local section3 = Tab:NewSection("Single")
+
+section3:NewButton("Hammer", "Get Hammer", function()
+
+local args = {
+    [1] = workspace.Prison_ITEMS.single.Hammer.ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+
+end)
+
+
+section3:NewButton("Crude Knife", "Get Crude Knife", function()
+    local args = {
+        [1] = workspace.Prison_ITEMS.single["Crude Knife"].ITEMPICKUP
+    }
+    
+    workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+    
+end)
+
+
+section3:NewButton("Key Card", "Get Key Card", function()
+
+
+local args = {
+    [1] = workspace.Prison_ITEMS.single:FindFirstChild("Key card").ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+
+    
+end)
+
+
+
+
+local Tab = Window:NewTab("Credits")
+local section4 = Tab:NewSection("Credits")
+
+local Tab = Window:NewTab("Teleports")
+local section5 = Tab:NewSection("Tween")
+
+section4:NewButton("Copy Discord Plis", "Discord Copied", function()
+    setclipboard('Senpai Please Add You Disc Inv Inf Time')
+end)
+
+section4:NewLabel("Made By Woutt#4106")
+
+    section5:NewButton("Criminal Base", "Go Cr Base", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-917.505859, 99.9327698, 2049.50391, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+    end)
+
+    section5:NewButton("Police Base", "Go Police Base", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(821.800171, 95.9900055, 2296.1001, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    end)
+
+
+    section5:NewButton("Prisoner Base", "Go Prisoner Base", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(916.800171, 95.9899902, 2456.6001, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    end)
+
+
+    section1f:NewButton("Join Prisoner Team", "Join Prisoner", function()
+local args = {
+    [1] = "Bright orange"
+}
+
+workspace.Remote.TeamEvent:FireServer(unpack(args))
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+
+    end)
+
+
+    section1f:NewButton("Join Police Team", "Join Prisoner", function()
+        
+local args = {
+    [1] = "Bright blue"
+}
+
+workspace.Remote.TeamEvent:FireServer(unpack(args))
+
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+        
+   end)
+
