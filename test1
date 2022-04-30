@@ -1,9 +1,23 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Fludex Hub", "Synapse")
+local Window = Library.CreateLib("Bit Hub", "Serpent")
 
-local Tab = Window:NewTab("Player")
-local section1 = Tab:NewSection("LocalPlayer")
-local section1f = Tab:NewSection("Teams")
+local Tab1 = Window:NewTab("Player")
+local Tab2 = Window:NewTab("Main")
+local Tab3 = Window:NewTab("Credits")
+local Tab4 = Window:NewTab("Teleports")
+local Tab5 = Window:NewTab("Mode")
+
+
+local section5 = Tab4:NewSection("Tween")
+local section4 = Tab3:NewSection("Credits")
+local section1 = Tab1:NewSection("LocalPlayer")
+local section3 = Tab1:NewSection("Teams")
+local section2 = Tab2:NewSection("Giver")
+local section6 = Tab2:NewSection("Single")
+local section7 = Tab5:NewSection("Modes")
+
+
+
 
 section1:NewSlider("WalkSpeed", "Changes WalkSpeed", 500, 16, function(s) 
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
@@ -14,8 +28,7 @@ section1:NewSlider("JumpPower", "Changes JumpPower", 500, 50, function(s)
 end)
 
 
-local Tab = Window:NewTab("Main")
-local section2 = Tab:NewSection("Giver")
+
 
 section2:NewButton("Remington 870", "Get Remington 870", function()
     
@@ -51,9 +64,9 @@ workspace.Remote.ItemHandler:InvokeServer(unpack(args))
 end)
 
 
-local section3 = Tab:NewSection("Single")
 
-section3:NewButton("Hammer", "Get Hammer", function()
+
+section6:NewButton("Hammer", "Get Hammer", function()
 
 local args = {
     [1] = workspace.Prison_ITEMS.single.Hammer.ITEMPICKUP
@@ -64,7 +77,7 @@ workspace.Remote.ItemHandler:InvokeServer(unpack(args))
 end)
 
 
-section3:NewButton("Crude Knife", "Get Crude Knife", function()
+section6:NewButton("Crude Knife", "Get Crude Knife", function()
     local args = {
         [1] = workspace.Prison_ITEMS.single["Crude Knife"].ITEMPICKUP
     }
@@ -74,7 +87,7 @@ section3:NewButton("Crude Knife", "Get Crude Knife", function()
 end)
 
 
-section3:NewButton("Key Card", "Get Key Card", function()
+section6:NewButton("Key Card", "Get Key Card", function()
 
 
 local args = {
@@ -89,17 +102,12 @@ end)
 
 
 
-local Tab = Window:NewTab("Credits")
-local section4 = Tab:NewSection("Credits")
-
-local Tab = Window:NewTab("Teleports")
-local section5 = Tab:NewSection("Tween")
 
 section4:NewButton("Copy Discord Plis", "Discord Copied", function()
-    setclipboard('Senpai Please Add You Disc Inv Inf Time')
+    setclipboard('nil')
 end)
 
-section4:NewLabel("Made By Woutt#4106")
+section4:NewLabel("Made By Bitwz#4242")
 
     section5:NewButton("Criminal Base", "Go Cr Base", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-917.505859, 99.9327698, 2049.50391, 0, 0, 1, 0, 1, -0, -1, 0, 0)
@@ -115,7 +123,7 @@ section4:NewLabel("Made By Woutt#4106")
     end)
 
 
-    section1f:NewButton("Join Prisoner Team", "Join Prisoner", function()
+    section3:NewButton("Join Prisoner Team", "Join Prisoner", function()
 local args = {
     [1] = "Bright orange"
 }
@@ -126,7 +134,7 @@ game.Players.LocalPlayer.Character.Humanoid.Health = 0
     end)
 
 
-    section1f:NewButton("Join Police Team", "Join Prisoner", function()
+    section3:NewButton("Join Police Team", "Join Prisoner", function()
         
 local args = {
     [1] = "Bright blue"
@@ -138,3 +146,15 @@ game.Players.LocalPlayer.Character.Humanoid.Health = 0
         
    end)
 
+
+
+   section7:NewButton("Admin", "Get Admin Commands", function()
+
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'),true))()
+
+    end)
+    
+
+
+
+  
